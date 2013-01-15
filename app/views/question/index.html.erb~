@@ -1,0 +1,30 @@
+<html>
+ <head>
+  <p>
+   <li style="list-style:none;margin-left:900px"><%= link_to "Sign Out", signout_path, :method => :delete %></li>
+  </p>
+  <h1>Questions</h1>
+ </head>
+ <body>
+  <tr>
+    <table width="50%", >
+       <% @questions.each_with_index do |question,i| %>
+   <tbody>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= question.qus_text %></td></br>
+      <td><%= question.qus_type %></td></br>
+      <td><%= link_to "Edit", action: :edit, id: question.id %></td> 
+      <td><%= button_to("Delete", {:action => "destroy", :id => question.id}, :method => :delete) %></td>
+    </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </tr>
+ </body>
+ <div>
+   <%= link_to "Add Question",newquestion_path(:survay_id => params[:id]) %>&nbsp;&nbsp;&nbsp;
+   <%= link_to "Back", index_path %>
+ </div>
+</html>
+

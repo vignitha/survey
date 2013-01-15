@@ -1,0 +1,31 @@
+<html>
+<head>
+
+
+
+<body> 
+   <h1>Survey List</h1>
+<div style="margin-left:1000px"> 
+
+<%= link_to 'Login Admin',signin_path %></br>
+<%= link_to 'Login User',signin_path %></br>
+<%= link_to 'Login as Non-logged User', signin_path %>
+
+</div>
+<table width="70%">
+    <tr>
+      <th width="15%"><p align="center"><i><b>Survey Name</b></i></th>
+      <th width="15%"><p align="center"><i><b>Survey Description</b></i></th>
+     
+    </tr>
+     <% @surveys.each do |survay| %>
+     <tr>
+      <td align="center"><%= survay.survey_name %></td>
+      <td align="center"><%= survay.survey_description %></td>
+     
+      
+    <% end %>
+
+</body
+</head>
+<html>

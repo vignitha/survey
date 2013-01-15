@@ -1,0 +1,45 @@
+<html>
+<div style="background-color:#333399;color:white;text-align:center;padding-left:20px;margin-left:5px;height:40px;font-size:30px">Survey Application</div>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+    $(function() {
+         $( "#datepicker" ).datepicker({
+            showOn: "button",
+            buttonImage: "/images/calendar.gif",
+            buttonImageOnly: true, 
+            dateFormat: 'dd-mm-yy'
+        });
+    });
+    </script>
+</head>
+<body>
+<ul id="navbar">
+<li style="list-style:none;text-align:center"><%= link_to "New Survey" %></li>
+<li style="list-style:none;text-align:center"><%= link_to "Survey List",index_path %></li>
+</ul>
+<h1>Create New Survey</h1>
+<%= form_for :survay, :url => { action: :create } do |f| %>
+  <p>
+    Title:<%= f.text_field :survey_name %>
+  </p>
+  <p>
+    Description:<br>
+    <%= f.text_area :survey_description, :style => 'width: 350px;height:100px;' %>
+  </p> 
+   
+   <p>
+    Created:<%= f.text_field :Created, :style => 'width: 200px;hight: 100px;', :id => :datepicker %>
+  </p> 
+  
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %> 
+</body>
+</head>
+<html>

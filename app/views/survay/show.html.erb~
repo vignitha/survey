@@ -1,0 +1,11 @@
+<p>
+  Title:<%= @survey.survey_name %>
+</p>
+ <p>
+  Description:<%= @survey.survey_description %>
+</p>
+ <p>
+  Created:<%= @survey.Created %>
+</p> 
+ 
+<%= link_to 'Back', action: :index %>

@@ -1,0 +1,10 @@
+<p>
+  <strong>Question</strong>
+  <%= @question.qus_text %>
+</p>
+ <p>
+  <strong>Type</strong>
+  <%= @question.qus_type %>
+</p>
+ 
+<%= link_to 'Back', qusindex_path(:id => @question.survay_id) %>

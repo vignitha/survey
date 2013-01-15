@@ -1,0 +1,12 @@
+<header>
+  <nav class="round">
+    <ul>
+     <% if signed_in? %>
+      
+      <li style="list-style:none;margin-left:900px"><%= link_to "Sign Out", signout_path, :method => :delete %></li>
+     <% else %>
+      <li style="list-style:none;margin-left:900px"><%= link_to "Sign In", signin_path %></li>
+     <% end %> 
+    </ul>
+  </nav> 
+</header>

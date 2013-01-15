@@ -1,0 +1,27 @@
+<html>
+<head>
+
+
+
+<body> 
+   <h1>Survey List</h1>
+<table border="1">
+    <tr>
+      <th width="15%"><p align="center"><i><b>Survey Name</b></i></th>
+      <th width="15%"><p align="center"><i><b>Survey Description</b></i></th>
+     
+    </tr>
+     <% @surveys.each do |survay| %>
+     <tr>
+      <td align="center"><%= survay.survey_name %></td>
+      <td align="center"><%= survay.survey_description %></td>
+     
+      
+    <% end %>
+
+</body
+</head>
+<html>
+ 
+
+

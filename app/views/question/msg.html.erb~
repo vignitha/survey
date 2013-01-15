@@ -1,0 +1,8 @@
+<html>
+<div>
+
+<p style="list-style:none;margin-left:900px"><%= link_to "Sign Out", signout_path, :method => :delete %></p>
+<h1 style="text-align:center;color:#8A0A4B">Thanks for answering the survey!</h1>
+</div>
+     
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<div>
+<%= render 'layouts/header' %> 
+</div>
+<body> 
+   <h1>Survey List</h1>
+
+<table width="80%">
+    <tr>
+      <th width="20%"><p align="center"><i><b>Survey Name</b></i></th>
+      <th width="20%"><p align="center"><i><b>Survey Description</b></i></th>
+      <th width="7%"></th>
+    </tr>
+     <% @surveys.each do |survay| %>
+     <tr>
+      <td align="center"><%= link_to (survay.survey_name), takesurvey_path(id: survay.id) %></td>
+      <td align="center"><%= survay.survey_description %></td> 
+     
+      <td align="center"><%= link_to "TakeSurvey", takesurvey_path(id: survay.id) %></td>
+     <% end %>
+</body
+</head>
+<html>
+ 
+ 

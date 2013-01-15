@@ -1,0 +1,17 @@
+<html>
+<h1>Create Question</h1>
+<%= form_for :question, :url => { action: :create } do |f| %>
+<%= f.hidden_field :survay_id, :value => params[:survay_id] %>
+ <p>
+    Question:<%= f.text_field :qus_text, :required => true %>
+   
+  </p>
+  <p>
+    Ques Type:<br>
+    <%= f.select :qus_type, options_for_select([['Essay Question'],'Numeric Question','Date Question']), :prompt => "Choose One"  %>
+  </p> 
+  <%= f.submit "Save" %>
+  </p>
+<% end %> 
+</html>
+

@@ -1,0 +1,50 @@
+<html>
+<h1>Take Survey</h1>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+    $(function() {
+         $( "#datepicker" ).datepicker({
+            showOn: "button",
+            buttonImage: "/images/calendar.gif",
+            buttonImageOnly: true
+        });
+    });
+    
+    </script>
+</head>
+<body>
+  
+<div>
+    <%= form_for :answer, :url => { action: :create }  do |f| %>
+    <% @questions.each_with_index do |question,i| %>
+   <tr>
+    <td><%= i + 1 %></td>
+    <td><%= question.qus_text %></td></br>
+    </tr>
+      <% if question.qus_type == "Essay Question" %>
+        <td>
+         <p>Ans:</p>
+         <%= f.text_area :answer, :style => 'width: 350px;height:100px;' %></br>
+        </td>
+     <% elsif question.qus_type == "Numeric Question" %>
+       <td>
+         Ans:<%= f.text_field :answer, :style => 'width: 50px;' %></br>
+       </td>
+     <% else %>
+       <td>
+         Ans:<%= f.text_field :answer, :style => 'width: 150px;', :id => :datepicker %></br>
+       </td>
+     <% end %>
+ <% end %>
+ </div>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+</body>
+
+</html>
